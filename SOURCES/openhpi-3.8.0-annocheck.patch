@@ -1,0 +1,11 @@
+diff -up openhpi-3.8.0/clients/hpixml/schema.S.me openhpi-3.8.0/clients/hpixml/schema.S
+--- openhpi-3.8.0/clients/hpixml/schema.S.me	2018-09-20 13:44:47.258156718 +0200
++++ openhpi-3.8.0/clients/hpixml/schema.S	2018-09-20 13:45:11.606294527 +0200
+@@ -13,3 +13,7 @@ _schema_end:
+ #if defined(__linux__) && defined(__ELF__)
+ .section .note.GNU-stack, "", %progbits
+ #endif
++
++#ifdef __CET__
++#include <cet.h>
++#endif
